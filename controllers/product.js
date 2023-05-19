@@ -86,7 +86,7 @@ const deleteProduct = async(req = request, res = response) => {
     const { id } = req.params;
 
     try {
-        const product = await Product.findByIdAndUpdate(id, {status: false}, { new: true });
+        const product = await Product.findByIdAndUpdate(id, {available: false}, { new: true });
 
         res.status(200).json({
             product
